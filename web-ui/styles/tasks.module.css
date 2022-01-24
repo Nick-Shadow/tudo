@@ -1,0 +1,13 @@
+.tasklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* todo finalize and add css grid layout */
+.taskentry {
+  background-color: red;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+}
