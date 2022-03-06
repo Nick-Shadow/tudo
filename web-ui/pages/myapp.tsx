@@ -1,11 +1,10 @@
 import { NextPage } from "next"
 
-import ProjectList from "../components/ProjectList"
-
 import Project from "../types/project"
 import User from "../types/user"
 import Link from "next/link"
 import { useState } from "react"
+import ProjectList from "../components/ProjectList"
 import ProjectEntry from "../components/ProjectEntry"
 import TaskList from "../components/TaskList"
 import TaskEntry from "../components/TaskEntry"
@@ -81,8 +80,6 @@ const TodoApp: NextPage = () => {
               project={project}
               setActiveProjectHandle={() => {
                 setActiveProject(loremUser.projects[index])
-                console.log("LOREM: ", loremUser.projects[index])
-                console.log("ACTIVE EXP: ", activeProject)
               }}
             />
           ))}

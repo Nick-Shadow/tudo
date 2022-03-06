@@ -22,33 +22,42 @@ const TaskEntry = (props: Props) => {
     setTask({ ...task, dueDate: newDueDate })
   return (
     <li className={taskStyles.taskentry}>
-      <div>
-        <div>
+      <button
+        className={taskStyles.taskentry}
+        //todo fix multibutton registry issue
+        onClick={() => setExpanded(!expanded)}
+      >
+        <div className={taskStyles.taskentrywrapper}>
+          <button className={taskStyles.checkbox}>
+            <img
+              className={taskStyles.checkbox}
+              src="/icons/box_unchecked.svg"
+            />
+          </button>
           <input
             type="text"
             onChange={(e) => changeTitle(e.target.value)}
             value={task.title}
             placeholder="Task title"
           />
-          <input type="button" onClick={() => setExpanded(!expanded)} />
           <input
             type="date"
             onChange={(e) => changeDueDate(e.target.value)}
             style={{ display: expanded ? "none" : "inline" }}
             value={task.dueDate}
           />
-        </div>
-        <div style={{ display: expanded ? "block" : "none" }}>
-          <p>{task.desc}</p>
-          <div>
-            <input
-              type="date"
-              onChange={(e) => changeDueDate(e.target.value)}
-              value={task.dueDate}
-            />
+          <div style={{ display: expanded ? "block" : "none" }}>
+            <p>{task.desc}</p>
+            <div>
+              <input
+                type="date"
+                onChange={(e) => changeDueDate(e.target.value)}
+                value={task.dueDate}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </button>
     </li>
   )
 }

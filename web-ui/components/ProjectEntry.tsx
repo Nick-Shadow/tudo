@@ -14,7 +14,6 @@ const ProjectEntry = (props: Props) => {
   const [project, setProject] = useState<Project>(props.project)
   return (
     <button
-      type="button"
       key={props.key}
       onClick={props.setActiveProjectHandle}
       className={projectStyles.entry}
