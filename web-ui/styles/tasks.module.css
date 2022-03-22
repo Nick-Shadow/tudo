@@ -9,6 +9,7 @@ button .taskentry {
   padding: 5px;
   margin: 10px;
   border-radius: 10px;
+  border: none;
 }
 
 /* todo finalize and add css grid layout */
@@ -17,6 +18,7 @@ li .taskentry {
   padding: 5px;
   margin: 10px;
   border-radius: 10px;
+  border: none;
 }
 
 .taskentrywrapper {
@@ -27,7 +29,23 @@ li .taskentry {
 }
 
 button .checkbox {
-  width: 20px;
-  height: 20px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+input .titleBox {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+input .dateBox {
+  background-color: red;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
   border: none;
 }

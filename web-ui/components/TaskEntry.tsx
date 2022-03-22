@@ -24,25 +24,41 @@ const TaskEntry = (props: Props) => {
     <li className={taskStyles.taskentry}>
       <button
         className={taskStyles.taskentry}
-        //todo fix multibutton registry issue
-        onClick={() => setExpanded(!expanded)}
+        // todo fix multibutton registry issue
+        onClick={(e) => {
+          setExpanded(!expanded)
+        }}
       >
         <div className={taskStyles.taskentrywrapper}>
-          <button className={taskStyles.checkbox}>
-            <img
-              className={taskStyles.checkbox}
-              src="/icons/box_unchecked.svg"
-            />
+          <button
+            className={taskStyles.checkbox}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
+          >
+            {/* Butter */}
+            <img src="/icons/box_unchecked.svg" />
           </button>
           <input
+            className={taskStyles.titleBox}
             type="text"
             onChange={(e) => changeTitle(e.target.value)}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
             value={task.title}
             placeholder="Task title"
           />
           <input
+            className={taskStyles.titleBox}
             type="date"
             onChange={(e) => changeDueDate(e.target.value)}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}
             style={{ display: expanded ? "none" : "inline" }}
             value={task.dueDate}
           />
@@ -50,8 +66,13 @@ const TaskEntry = (props: Props) => {
             <p>{task.desc}</p>
             <div>
               <input
+                className={taskStyles.titleBox}
                 type="date"
                 onChange={(e) => changeDueDate(e.target.value)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
                 value={task.dueDate}
               />
             </div>
